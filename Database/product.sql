@@ -10,3 +10,16 @@ CREATE TABLE `product` (
   `quantity` varchar(35) NOT NULL,
   `information` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+
+Table structure for table `useracc'
+
+
+CREATE TABLE `useracc` (
+  `ID` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` enum('','Admin','User','Editor') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
