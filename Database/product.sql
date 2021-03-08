@@ -14,7 +14,7 @@ CREATE TABLE `product` (
 
 
 
-CREATE TABLE `product`(
+Table structure for table `useracc`
 
 
 CREATE TABLE `useracc` (
