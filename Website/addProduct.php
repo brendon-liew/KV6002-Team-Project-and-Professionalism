@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
         
       
 	//inserting image details (ie image name) in the database
-	 $sql = "INSERT INTO product (names,image) VALUES ('$test','$filename')";
+	 $sql = "INSERT INTO product (pname,pimg) VALUES ('$test','$filename')";
 	$conn->exec($sql);	
   
     if (move_uploaded_file($tempname, $folder))  { 
