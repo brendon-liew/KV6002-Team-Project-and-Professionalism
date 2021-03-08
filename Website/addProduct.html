@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form action="addProduct.php" method="post" enctype="multipart/form-data" >
+<label for="fname">Product Name:</label>
+<input type="text" id="fname" name="fname"><br><br>
+
+<input type="file" name="uploadImg"/>
+<br><img id="myImg" src="#"><br><br>
+
+<label for="product">Gender:</label>
+<select name="gender" id="gender">
+<option value=""></option>
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+</select><br><br>
+
+<label for="ptype">Choose a category:</label>
+<select name="cars" id="cars">
+<option value=""></option>
+<option value="shirt">Shirt</option>
+<option value="pants">Pants</option>
+<option value="socks">Socks</option>
+</select><br><br>
+
+<label for="size">Quantity</label>
+<input type="text"><br><br>
+
+<label for="test">Information of Product</label>
+<textarea id="test"></textarea><br><br>
+
+<input type="submit" value="Submit" name="submit">
+
+</form>
+<script>
+window.addEventListener('load', function() {
+  document.querySelector('input[type="file"]').addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+          var img = document.querySelector('img');
+          img.onload = () => {
+              URL.revokeObjectURL(img.src);  // no longer needed, free memory
+          }
+
+          img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+      }
+  });
+});
+
+</script>
+</body>
+</html>
