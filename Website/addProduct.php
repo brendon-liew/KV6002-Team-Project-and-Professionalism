@@ -4,7 +4,7 @@ require_once("config.php");
 
 
 if(isset($_POST['submit'])){
-	
+	try {
 	
 	//inserting image details (ie image name) in the database
 	 //Prepare stament
@@ -31,6 +31,16 @@ if(isset($_POST['submit'])){
 	$qual = $_POST['qua'];  	
 	$pric = $_POST['pri'];  
 	
+	
+	 $stmt1 = $conn->prepare("Select * from product where pname='" . $fname . "'");
+	 $stmt1->execute();
+	 $result = $stmt1->fetchAll();
+	
+	
+	
+	
+	
+	
 	//Check see whether this directory exist current folder 
 	if(!is_dir($folder)){
 		mkdir($folder,0755);
@@ -43,18 +53,19 @@ if(isset($_POST['submit'])){
 	 }else{
 		 echo "Fail to upload";
 	 }
-	//Execute the value 
-	$stmt->execute();	
-	
+	 
+	 //Check whether the value is exist in database
+	 if(count($result)==0){
+			echo "Insert succesfully";
+			
+			//Execute the value 
+			$stmt->execute();
+	}else{
+			echo "<br>"."Value exist";
+	}
 
-	
-	
-      
-
-// try {
-	
-// } catch(Exception $e) {
- // echo $sql . "<br>" . $e->getMessage();
-//}
+		} catch(PDOException $e) {
+	echo  "<br>" . $e->getMessage();
+	}
 }
 ?>
