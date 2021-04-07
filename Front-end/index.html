@@ -6,165 +6,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Commercial</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/Article-List.css">
+    <link rel="stylesheet" href="assets/css/Check-Out-Page-v100.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean-1.css">
     <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/Profile-Edit-Form-1.css">
+    <link rel="stylesheet" href="assets/css/Profile-Edit-Form.css">
     <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="assets/css/Sidebar-1.css">
+    <link rel="stylesheet" href="assets/css/Sidebar.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body>
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search" style="color: var(--blue);background: var(--light);">
-        <div class="container"><a class="navbar-brand" href="#">E-Goth</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+<body style="font-family: Oswald, sans-serif;background: url(&quot;assets/img/lines%20backround%202.jpg&quot;);">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search" id="navclass" style="color: var(--gray-dark);background: rgba(255,255,255,0.4);">
+        <div class="container"><a class="navbar-brand" href="index.html">E-Goth</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1" style="color: var(--warning);">
                 <ul class="navbar-nav">
                     <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Man</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Woman</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
                 </ul>
                 <form class="form-inline mr-auto" target="_self">
-                    <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" id="search-field" name="search"></div>
+                    <div class="form-group"><label for="search-field"><i class="fa fa-search" style="color: rgb(0,0,0);"></i></label><input class="form-control search-field" type="search" id="search-field" name="search" style="color: rgb(255,255,255);background: rgba(0,0,0,0.36);"></div>
                 </form>
             </div>
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-heart"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-shopping-basket"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-user"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-cog"></i>
-                        <div></div>
-                    </a></li>
+                <li class="nav-item"></li>
+                <li class="nav-item"><a class="nav-link" href="checkout.html"><i class="fa fa-shopping-basket"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fa fa-user"></i></a></li>
+                <li class="nav-item"></li>
             </ul>
+            <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-toggle="dropdown" href="#" style="color: #434a52;">Account</a>
+                <div class="dropdown-menu"><a class="dropdown-item" data-bss-hover-animate="pulse" href="signForm.html" style="color: rgb(0,0,0);background: #e5c6db;">Sign up</a><a class="dropdown-item" data-bss-hover-animate="pulse" href="login.html" style="color: rgb(0,0,0);background: #e87fc9;">Log in</a></div>
+            </div>
         </div>
     </nav>
     <div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <div><a class="btn btn-primary" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-1" href="#collapse-1" role="button">New in</a>
-                        <div class="collapse show" id="collapse-1">
-                            <p>Collapse content.</p>
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item"><a class="nav-link active" href="#">First Item</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Second Item</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Third Item</a></li>
-                            </ul>
+                <div class="col-md-6"><div id="sidebar-main" class="sidebar sidebar-default sidebar-separate">
+    <div class="sidebar-category sidebar-default">
+        <div class="category-title">
+            <span>Categories</span>
+        </div>
+        <div class="category-content">
+            <ul id="clothes-nav" class="nav flex-column">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        Women
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        Men
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        Shoes
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#other-clothes" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="other-clothes">
+                         General
+                    </a>
+                    <ul id="other-clothes" class="flex-column collapse">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                 Pants
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                 Jackets
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div></div>
+                <div class="col-md-6">
+                    <div id="promo" style="margin: 33px;background: url(&quot;assets/img/poolball.jpg&quot;) center / contain;">
+                        <div class="jumbotron" data-bss-hover-animate="pulse" style="background: rgba(255,255,255,0);">
+                            <h1 style="background: rgba(0,0,0,0.36);color: rgb(239,209,52);">All other sales can go home</h1>
+                            <p style="background: rgba(0,0,0,0.36);color: #efd134;">Sales up to 60% on all summer items</p>
+                            <p><a class="btn btn-primary" role="button" data-toggle="tooltip" data-bss-tooltip="" data-bss-hover-animate="pulse" style="background: #2b2b28;" title="View sales">Shop now</a></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div><a class="btn btn-primary" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-2" href="#collapse-2" role="button">Show Content</a>
-                        <div class="collapse show" id="collapse-2">
-                            <p>Collapse content.</p>
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item"><a class="nav-link active" href="#">First Item</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Second Item</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Third Item</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div><a class="btn btn-primary" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-3" href="#collapse-3" role="button">Show Content</a>
-                        <div class="collapse show" id="collapse-3">
-                            <p>Collapse content.</p>
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item"><a class="nav-link active" href="#">First Item</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Second Item</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Third Item</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div><a class="btn btn-primary" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-4" href="#collapse-4" role="button">Show Content</a>
-                        <div class="collapse show" id="collapse-4">
-                            <p>Collapse content.</p>
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item"><a class="nav-link active" href="#">First Item</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Second Item</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Third Item</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
+    <div data-bss-hover-animate="pulse" id="promo" style="background: url(&quot;assets/img/banner0.jpg&quot;) center / cover;">
+        <div class="jumbotron" data-bss-hover-animate="pulse" style="background: rgba(255,255,255,0);height: 354px;padding: 104px;">
+            <h1 style="background: rgba(255,255,255,0.68);">Shop your unique summer look</h1>
+            <p><a class="btn btn-primary" role="button" data-toggle="tooltip" data-bss-tooltip="" data-bss-hover-animate="pulse" style="background: #2b2b28;" title="Open collection">Shop now</a></p>
+        </div>
+    </div>
+    <section style="margin: 0px;height: 72px;"></section>
     <div>
-        <div class="jumbotron">
-            <h1>Heading text</h1>
-            <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-            <p><a class="btn btn-primary" role="button">Learn more</a></p>
-        </div>
-    </div>
-    <div id="carousel-size">
-        <div class="carousel slide" data-ride="carousel" id="carousel-1">
-            <div class="carousel-inner">
-                <div class="carousel-item active"><img class="w-100 d-block" src="assets/img/hoodies.webp" alt="Slide Image"></div>
-                <div class="carousel-item"><img class="w-100 d-block" src="assets/img/summer-shirts-men.jpg" alt="Slide Image"></div>
-                <div class="carousel-item"><img class="w-100 d-block" src="assets/img/clothes.jpeg" alt="Slide Image"></div>
-            </div>
-            <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-1" data-slide-to="1"></li>
-                <li data-target="#carousel-1" data-slide-to="2"></li>
-            </ol>
-        </div>
-    </div>
-    <div>
-        <div class="card-group">
-            <div class="card"><img class="card-img-top w-100 d-block">
-                <div class="card-body">
-                    <h4 class="card-title">Title</h4>
-                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button>
+        <div class="card-group" style="text-align: center;">
+            <div class="card">
+                <div class="card-body" data-bss-hover-animate="pulse" style="background: url(&quot;assets/img/shoes.jpg&quot;) center / cover;text-align: center;">
+                    <h4 class="card-title" style="background: rgba(0,0,0,0.29);color: rgb(255,255,255);">Extended shoe collection</h4><button class="btn btn-primary" data-toggle="tooltip" data-bss-tooltip="" data-bss-hover-animate="pulse" type="button" style="margin: 92px;background: #2b2b28;" title="Open colletion">Shoes</button>
                 </div>
             </div>
-            <div class="card"><img class="card-img-top w-100 d-block">
-                <div class="card-body">
-                    <h4 class="card-title">Title</h4>
-                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button>
+            <div class="card">
+                <div class="card-body" data-bss-hover-animate="pulse" style="background: url(&quot;assets/img/jacket.jpg&quot;) center / cover;">
+                    <h4 class="card-title" style="background: rgba(0,0,0,0.29);color: rgb(255,255,255);">Jacket for all needs</h4><button class="btn btn-primary" data-toggle="tooltip" data-bss-tooltip="" data-bss-hover-animate="pulse" type="button" style="margin: 92px;background: #2b2b28;" title="Open colletion">Jackets</button>
                 </div>
             </div>
-            <div class="card"><img class="card-img-top w-100 d-block">
-                <div class="card-body">
-                    <h4 class="card-title">Title</h4>
-                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button>
+            <div class="card">
+                <div class="card-body" data-bss-hover-animate="pulse" style="background: url(&quot;assets/img/goth%20model.jpg&quot;) top / cover;">
+                    <h4 class="card-title" style="background: rgba(0,0,0,0.29);color: rgb(255,255,255);">Styles to mix and match</h4><button class="btn btn-primary" data-toggle="tooltip" data-bss-tooltip="" data-bss-hover-animate="pulse" type="button" style="margin: 92px;background: #2b2b28;" title="Open colletion">Styles</button>
                 </div>
             </div>
         </div>
     </div>
-    <div>
-        <div class="jumbotron">
-            <h1>Heading text</h1>
-            <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-            <p><a class="btn btn-primary" role="button">Learn more</a></p>
+    <section style="height: 72px;"></section>
+    <div data-bss-hover-animate="pulse" id="promo2" style="background: url(&quot;assets/img/products/banner2.jpg&quot;) center / cover;">
+        <div class="jumbotron" style="background: rgba(255,255,255,0);">
+            <h1 style="background: rgba(255,255,255,0.54);">Your new favorite look just arrived</h1>
+            <p style="background: rgba(255,255,255,0.71);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+            <p><a class="btn btn-primary" role="button" data-toggle="tooltip" data-bss-tooltip="" data-bss-hover-animate="pulse" style="background: #2b2b28;" title="View new arrivals">Shop now</a></p>
         </div>
     </div>
-    <div>
-        <section class="article-list">
+    <section style="height: 72px;"></section>
+    <div class="carousel slide" data-ride="carousel" id="carousel-2">
+        <div class="carousel-inner">
+            <div class="carousel-item active"><img class="w-100 d-block" src="assets/img/products/carousel1.jpg" alt="Slide Image"></div>
+            <div class="carousel-item"><img class="w-100 d-block" src="assets/img/products/carousel2.jpg" alt="Slide Image"></div>
+            <div class="carousel-item"><img class="w-100 d-block" src="assets/img/products/carousel3.jpg" alt="Slide Image"></div>
+        </div>
+        <div><a class="carousel-control-prev" href="#carousel-2" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-2" role="button" data-slide="next"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-2" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-2" data-slide-to="1"></li>
+            <li data-target="#carousel-2" data-slide-to="2"></li>
+        </ol>
+    </div>
+    <div style="padding: 84px;">
+        <section class="article-list" style="background: #e5c6db;">
             <div class="container">
                 <div class="intro">
-                    <h2 class="text-center">Latest Articles</h2>
-                    <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+                    <h2 class="text-center" style="color: #434a52;font-size: 46px;">Style feed</h2>
+                    <p class="text-center" style="color: rgb(0,0,0);">Inspiration Advice Shopping Fun</p>
                 </div>
                 <div class="row articles">
-                    <div class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="assets/img/desk.jpg"></a>
-                        <h3 class="name">Article Title</h3>
+                    <div class="col-sm-6 col-md-4 item" data-bss-hover-animate="pulse"><a href="sizeGuide.html"><img class="img-fluid" src="assets/img/size.jpg"></a>
+                        <h3 class="name" style="color: #a01492;">Check out our size guide</h3>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="sizeGuide.html"><i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 item" data-bss-hover-animate="pulse"><a href="#"></a><img class="img-fluid" src="assets/img/delivery.jpg">
+                        <h3 class="name" style="color: #a01492;">Upcoming items and new delivery system</h3>
                         <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
                     </div>
-                    <div class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="assets/img/building.jpg"></a>
-                        <h3 class="name">Article Title</h3>
-                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="assets/img/loft.jpg"></a>
-                        <h3 class="name">Article Title</h3>
+                    <div class="col-sm-6 col-md-4 item" data-bss-hover-animate="pulse"><a href="#"><img class="img-fluid" src="assets/img/girls.jpg" style="height: 233.625px;width: 350px;"></a>
+                        <h3 class="name" style="color: #a01492;">"Rule of 6" Looks just for YOU</h3>
                         <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -172,15 +182,15 @@
         </section>
     </div>
     <div>
-        <footer class="footer-dark">
+        <footer class="footer-dark" style="color: #e87fc9;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-md-3 item">
-                        <h3>Services</h3>
+                        <h3>Help &amp; Information</h3>
                         <ul>
-                            <li><a href="#">Web design</a></li>
+                            <li><a href="contact.html">Contact us</a></li>
                             <li><a href="#">Development</a></li>
-                            <li><a href="#">Hosting</a></li>
+                            <li></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-md-3 item">
@@ -188,21 +198,24 @@
                         <ul>
                             <li><a href="#">Company</a></li>
                             <li><a href="#">Team</a></li>
-                            <li><a href="#">Careers</a></li>
+                            <li></li>
                         </ul>
                     </div>
                     <div class="col-md-6 item text">
                         <h3>Company Name</h3>
                         <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
                     </div>
-                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
                 </div>
-                <p class="copyright">Company Name © 2021</p>
+                <p class="copyright">Team project members(Yunus Celik 1) © 2021</p>
             </div>
         </footer>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/Profile-Edit-Form.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
