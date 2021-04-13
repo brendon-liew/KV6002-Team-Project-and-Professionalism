@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2021 at 07:42 PM
+-- Generation Time: Apr 13, 2021 at 02:46 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -102,6 +102,30 @@ INSERT INTO `colour` (`colourID`, `colourCode`, `colourName`) VALUES
 (9, '#ff3a3a', 'Light red'),
 (10, '#6000b0', 'Dark purple'),
 (11, '#c683ff', 'Light purple');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `delivery_details`
+--
+
+CREATE TABLE `delivery_details` (
+  `userID` int(10) NOT NULL,
+  `fullName` varchar(256) DEFAULT NULL,
+  `email` varchar(256) DEFAULT NULL,
+  `address` varchar(256) DEFAULT NULL,
+  `city` varchar(256) DEFAULT NULL,
+  `state` varchar(256) DEFAULT NULL,
+  `zip` varchar(256) DEFAULT NULL,
+  `county` varchar(256) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `delivery_details`
+--
+
+INSERT INTO `delivery_details` (`userID`, `fullName`, `email`, `address`, `city`, `state`, `zip`, `county`) VALUES
+(1, 'Test Testington', 'Test@mail.com', 'test 1', 'Testcastle', 'Test & Wear', 'NE13 TEST', 'Testside');
 
 -- --------------------------------------------------------
 
@@ -306,8 +330,8 @@ INSERT INTO `shoes` (`shID`, `shName`, `shDesc`, `shPrice`, `shImg`, `genID`) VA
 
 CREATE TABLE `user` (
   `userID` int(10) NOT NULL,
-  `userName` varchar(256) DEFAULT NULL,
-  `userPassword` varchar(256) DEFAULT NULL
+  `userName` varchar(32) NOT NULL,
+  `userPassword` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -315,7 +339,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`userID`, `userName`, `userPassword`) VALUES
-(1, 'admin@email.com', 'admin12345');
+(1, 'admin@email.com', '7488e331b8b64e5794da3fa4eb10ad5d'),
+(2, 'myuser', '254877852cc100aaafeb23a21acda391');
 
 --
 -- Indexes for dumped tables
@@ -338,6 +363,12 @@ ALTER TABLE `cat`
 --
 ALTER TABLE `colour`
   ADD PRIMARY KEY (`colourID`);
+
+--
+-- Indexes for table `delivery_details`
+--
+ALTER TABLE `delivery_details`
+  ADD PRIMARY KEY (`userID`);
 
 --
 -- Indexes for table `jacket`
@@ -392,6 +423,12 @@ ALTER TABLE `accessories`
   MODIFY `asID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `delivery_details`
+--
+ALTER TABLE `delivery_details`
+  MODIFY `userID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `jacket`
 --
 ALTER TABLE `jacket`
@@ -419,7 +456,7 @@ ALTER TABLE `shoes`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `userID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
