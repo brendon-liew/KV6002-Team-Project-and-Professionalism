@@ -40,7 +40,7 @@ window.location.href='login.php';
                     </script>";
 
             $_SESSION['logged-in'] = true;
-            $_SESSION['username'] = $username;
+            $_SESSION['email'] = $email;
         } else {
             echo "Invalid Username or Password";
         }
