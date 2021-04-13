@@ -42,13 +42,13 @@
         </div>
     </nav>
     <section class="contact-clean" style="height: 732px;padding: 129px 0px;background: url(&quot;assets/img/contact%20us.jpg&quot;) center / cover;">
-        <form method="post">
-            <h2 class="text-center">Contact us</h2>
-            <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name"></div>
-            <div class="form-group"><input class="form-control is-invalid" type="email" name="email" placeholder="Email"><small class="form-text text-danger">Please enter a correct email address.</small></div>
-            <div class="form-group"><textarea class="form-control" name="message" placeholder="Message" rows="14"></textarea></div>
-            <div class="form-group"><button class="btn btn-primary" type="button">Submit</button></div>
-        </form>
+        <form  class="contact-form" action="contact.php" method="post">
+            <div class="form-group"> <input  class="form-control" type="text" name="name" placeholder="Full Name"></div>
+            <div class="form-group"> <input  class="form-control is-invalid" type="email" name="email" placeholder="Your e-mail"><small class="form-text text danger">Please enter correct email address</small> </div>
+            <div class="form-group"> <input  class="form-control" type="text" name="subject" placeholder="Subject"></div>
+            <div class="form-group"> <textarea class="form-control name="message" placeholder="Message" rows="14"></textarea></div>
+            <div class="form-group"> <button class="btn btn-primary" type="submit" name="submit"> Send Mail</button></div>
+            </form>
     </section>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
