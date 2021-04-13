@@ -1,0 +1,71 @@
+body {
+  padding: 1em;
+  
+}
+h1 { 
+  color: #7c795d;
+   font-family: 'Trocchi', serif;
+    font-size: 45px;
+     font-weight: normal;
+      line-height: 48px; 
+      margin: 0; 
+    text-align: center;
+    }
+h4 {
+  font-weight: bold;
+  text-align: center;
+}
+
+#accordion h3 {
+  margin-top: 12px;
+}
+#accordion .tab-content {
+  margin-top: 12px;
+  padding: 10em;
+}
+#accordion .nav-tabs a {
+  font-size: 12px;
+  padding: 9px !important;
+}
+
+#accordion .panel-heading {
+  padding: 0;
+}
+#accordion .panel-heading a {
+  display: block;
+  padding: 12px;
+  color:#7c795d;
+  font: oswald;
+}
+#accordion .panel-heading .nav > li > a {
+  padding: 10px 7px;
+}
+
+td {
+  padding: 0.8em;
+}
+
+table tr:first-child td {
+  background: rgb(235, 131, 131);
+  color: rgb(0, 0, 0);
+}
+a { 
+  color: #b63b6e; 
+  text-decoration: underline; 
+  background:rgb(235, 131, 131) ;
+}
+
+
+a:hover { 
+  color: #504343 
+}
+
+
+/* Fix chopped in half elements caused by -webkit-overflow-scrolling-touch bug */
+td {
+  -webkit-transform: translate3d(0, 0, 0);
+  background: white;
+  border: 1px solid #ddd;
+}
+
+/* BOOTSRAP */
