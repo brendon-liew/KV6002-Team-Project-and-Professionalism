@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if(empty($_SESSION['logged-in'])){
+    echo "<script>
+window.location.href='login.php';
+</script>";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,8 +49,18 @@
                 <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fa fa-user"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-cog"></i></a></li>
             </ul>
-            <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-toggle="dropdown" href="#" style="color: #434a52;">Account</a>
-                <div class="dropdown-menu"><a class="dropdown-item" data-bss-hover-animate="bounce" href="signForm.html" style="color: rgb(0,0,0);background: #e5c6db;">Sign up</a><a class="dropdown-item" data-bss-hover-animate="bounce" href="login.html" style="color: rgb(0,0,0);background: #e87fc9;">Log in</a></div>
+             <div class="dropdown-menu">
+
+                    <?php
+                    if (isset($_SESSION['logged-in'])) {
+                        echo"<a class=\"dropdown-item\" data-bss-hover-animate=\"pulse\" href=\"signOut.php\" style=\"color: rgb(0,0,0);background: #e87fc9;\">Sign out</a></div>";
+
+                    } else{
+                        (empty($_SESSION['logged-in']));
+                        echo "<a class=\"dropdown-item\" data-bss-hover-animate=\"pulse\" href=\"signForm.php\" style=\"color: rgb(0,0,0);background: #e5c6db;\">Sign up</a>
+                    <a class=\"dropdown-item\" data-bss-hover-animate=\"pulse\" href=\"login.php\" style=\"color: rgb(0,0,0);background: #e87fc9;\">Log in</a>";
+                    }
+                    ?>
             </div>
         </div>
     </nav>
