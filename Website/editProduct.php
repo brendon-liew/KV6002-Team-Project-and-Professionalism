@@ -14,22 +14,19 @@
 	$paID = isset($_GET["paID"]) ? $_GET["paID"] : null;
 	$asID = isset($_GET["asID"]) ? $_GET["asID"] : null;
 	
+	$stmt1 = $conn->prepare("Select genID,gender from gender");
+	$stmt1->execute();
 	
 	
-	
-	$stmt2 = $conn->prepare("Select * from product_size");
-	$stmt2->execute();
-	$result2 = $stmt2->fetchAll();
 	
 	if($jaID!=null){
 	$stmt3 = $conn->prepare("Select jaID,jaName,jaDesc,jaPrice,jaImg,jacket.genID,gender.genID,gender.gender from jacket
 							INNER JOIN gender ON  gender.genID = jacket.genID where jaID = $jaID");
 	$stmt3->execute();
-	$result3 = $stmt3->fetch();
+	$result3 = $stmt3->fetchObject();
 	
-	$stmt4 = $conn->prepare("Select genID,gender from gender");
-	$stmt4->execute();
-	//$result4 = $stmt4->fetchAll();
+	
+	
 	
 	$stmt1 = $conn->prepare("Select * from cat");
 	$stmt1->execute();
@@ -57,17 +54,23 @@
 	
 	echo "<form action='updateProduct.php' method='post' enctype='multipart/form-data'>";
 	if($jaID!=null){
-	echo "<p>Product ID:<input type='text' id='IDname' name='IDname' value='$result3[jaID]'></p>";
-	echo "<p>Product name:<input type='text' id='fname' name='fname' value='$result3[jaName]'></p>";
+	echo "<p>Product ID:<input type='text' id='IDname' name='IDname' value='{$result3->jaID}'></p>";
+	echo "<p>Product name:<input type='text' id='fname' name='fname' value='{$result3->jaName}'></p>";
 	echo "<p><label for='img'>Image:</label>";
-	echo "<img id='myImg' src='$result3[jaImg]' style='visibility:hidden'></p>";
+	echo "<img id='myImg' src='http://{$result3->jaImg}' ></p>";
 	echo "<p>Gender:<select name='genders'>";
-		while ($result4 = $stmt4->fetch()) {
-			if($result4->genID == $result3->genID){
-			echo "<option selected value=$result4[genID]>$result4[gender]</option>";
-			}
-			
+	
+	while ($record1 = $stmt1->fetchObject()) {
+	if ($result3->genID == $record1->genID) {
+	echo "<option value='{$record1->genID}' selected>{$record1->gender}</option>";
+	}
+	else { 
+   echo "<option value='{$record1->genID}'>{$record1->gender}</option>";
+	}	
 		}
+		
+		
+
 	echo "</select></p>";
 	
 	echo "<p>Category:<select name='cat'>";
@@ -78,17 +81,11 @@
 	echo "</select></p>";
 	
 	echo "<p>Quantity<input type='text' name='qua'></p>";
-	echo "<p>Price<input type='number' name='pri' class='floatNumberField' placeholder='0.00' step='0.01' value='$result3[jaPrice]'></p>";
+	echo "<p>Price<input type='number' name='pri' class='floatNumberField' placeholder='0.00' step='0.01' value='{$result3->jaPrice}'></p>";
 	
 	
 	
 	}
-	
-	echo "<p>Size:<select name='siz'>";
-	foreach($result2 as $option2){
-	echo "<option value=$option2[sizeID]>$option2[sizeOrder]</option>";
-	}
-	echo "</select></p>";
 	
 
 	
