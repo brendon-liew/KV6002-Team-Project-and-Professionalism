@@ -42,14 +42,41 @@
         </div>
     </nav>
     <section class="contact-clean" style="height: 732px;padding: 129px 0px;background: url(&quot;assets/img/contact%20us.jpg&quot;) center / cover;">
-        <form  class="contact-form" action="contact.php" method="post">
-            <div class="form-group"> <input  class="form-control" type="text" name="name" placeholder="Full Name"></div>
-            <div class="form-group"> <input  class="form-control is-invalid" type="email" name="email" placeholder="Your e-mail"><small class="form-text text danger">Please enter correct email address</small> </div>
-            <div class="form-group"> <input  class="form-control" type="text" name="subject" placeholder="Subject"></div>
-            <div class="form-group"> <textarea class="form-control name="message" placeholder="Message" rows="14"></textarea></div>
-            <div class="form-group"> <button class="btn btn-primary" type="submit" name="submit"> Send Mail</button></div>
+        
+        <form id="signUpForm" class="contact-form" action="https://mailthis.to/Futura" method="POST" encType="multipart/form-data"> 
+            <div class="form-group"> <input  class="form-control" type="text"  name="name" placeholder="Full Name" required></div>
+            <div class="form-group"> <input  class="form-control is-invalid" type="email" id="emailField" name="_replyto" placeholder="Your e-mail" required> </div>
+            <div class="form-group"> <input  class="form-control is-invalid" type="file" name="_replyto" placeholder="Attachments"> </div>
+            <div class="form-group"> <textarea class="form-control" name="message" placeholder="Enter your message here" rows="14" required></textarea></div>
+            <div class="form-group"> <button class="btn btn-primary" type="submit" id="okButton" name="submit" > Send Mail</button></div>
+            <input type="hidden" name="_subject" value="Contact form submitted">
+            <input type="hidden" name="_after" value="index.html">
+            <input type="hidden" name="_honeypot" value="">
+            <input type="hidden" name="_confirmation" value="">
             </form>
     </section>
+
+    <script>
+        const signUpForm = document.getElementById('signUpForm');
+        const emailField = document.getElementById('emailField');
+        const okButton = document.getElementById('okButton');
+        
+          
+        emailField.addEventListener('keyup', function (event) {
+          isValidEmail = emailField.checkValidity();
+          
+          if ( isValidEmail ) {
+            okButton.disabled = false;
+          } else {
+            okButton.disabled = true;
+          }
+        });
+          
+        okButton.addEventListener('click', function (event) {
+          signUpForm.submit();
+        });
+        </script>
+    
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
