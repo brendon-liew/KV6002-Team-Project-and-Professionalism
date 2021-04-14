@@ -230,7 +230,7 @@ session_start();
                     <div class="col-sm-6 col-md-3 item">
                         <h3>Help &amp; Information</h3>
                         <ul>
-                            <li><a href="contactPage.php">Contact us</a></li>
+                            <li><a href="contactPage.html">Contact us</a></li>
                             <li><a href="#">Development</a></li>
                             <li></li>
                         </ul>
