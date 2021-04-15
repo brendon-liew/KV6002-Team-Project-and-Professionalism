@@ -76,7 +76,7 @@ $(document).ready(function(){
 
 	<label for='fname'>Category:</label>
 	<select name="multi_search" id="multi_search" >
-	<option value="0"></option>
+	
 	<?php
    foreach($result as $row)
    {
