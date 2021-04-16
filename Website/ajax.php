@@ -53,83 +53,80 @@ if($total_row > 0)
 		<th>Edit</th>
 	<tr>
   ';
-		if($search1==1){
-	 foreach($result as $row)
-	 {
-	  $output .= '
-	  <tr>
-	   <td>'.$row["jaName"].'</td>
-	   <td>'.$row["jaDesc"].'</td>
-	   <td>'.$row["jaPrice"].'</td>
-	   <td><img style="width:350px" src="http://'.$row["jaImg"].'"></td>
-	   <td><a href="editProduct.php?jaID='.$row["jaID"].'">Edit</a></td>
-	</tr>
-	  
-	  ';
-	 }
-		}
-		
-					if($search1==2){
-				 foreach($result as $row)
-				 {
-				  $output .= '
-				  <tr>
-				   <td>'.$row["shrtName"].'</td>
-				   <td>'.$row["shrtDesc"].'</td>
-				   <td>'.$row["shrtPrice"].'</td>
-				   <td><img style="width:350px" src="http://'.$row["shrtImg"].'"></td>
-				   <td><a href="editProduct.php?shrtID='.$row["shrtID"].'">Edit</a></td>
-				  </tr>
-				  
-				  ';
-				 }
-				}
-					if($search1==3){
-						foreach($result as $row)
-						{
-						$output .= '
-						<tr>
-					   <td>'.$row["shName"].'</td>
-					   <td>'.$row["shDesc"].'</td>
-					   <td>'.$row["shPrice"].'</td>
-					   <td><img style="width:350px" src="http://'.$row["shImg"].'"></td>
-						<td><a href="editProduct.php?shID='.$row["shID"].'">Edit</a></td>
-					  </tr>
-					  ';
-						}
-					}
-							if($search1==4){
-							 foreach($result as $row)
-							 {
-							  $output .= '
-							  <tr>
-							   <td>'.$row["paName"].'</td>
-							   <td>'.$row["paDesc"].'</td>
-							   <td>'.$row["paPrice"].'</td>
-							   <td><img style="width:350px "src="http://'.$row["paImg"].'"></td>
-								<td><a href="editProduct.php?paID='.$row["paID"].'">Edit</a></td>
-							  </tr>
+	if($search==1){
+ foreach($result as $row)
+ {
+  $output .= '
+  <tr>
+   <td>'.$row["jaName"].'</td>
+   <td>'.$row["jaDesc"].'</td>
+   <td>'.$row["jaPrice"].'</td>
+   <td><img style="width:350px" src="http://'.$row["jaImg"].'"></td>
+   <td><a href="editProduct.php?jaID='.$row["jaID"].'">Edit</a></td>
+   
+  </tr>
   
-							  ';
-							 }
-							}
-										if($search1==5){
-										 foreach($result as $row)
-										 {
-										  $output .= '
-										  <tr>
-										   <td>'.$row["asName"].'</td>
-										   <td>'.$row["asDesc"].'</td>
-										   <td>'.$row["asPrice"].'</td>
-										   <td><img src="http://'.$row["asImg"].'"></td>
-										   <td><a href="editProduct.php?asID='.$row["asID"].'">Edit</a></td>
-										  </tr>
+  ';
+ }
+	}
+	elseif($search==2){
+ foreach($result as $row)
+ {
+  $output .= '
+  <tr>
+   <td>'.$row["shrtName"].'</td>
+   <td>'.$row["shrtDesc"].'</td>
+   <td>'.$row["shrtPrice"].'</td>
+   <td><img style="width:350px" src="http://'.$row["shrtImg"].'"></td>
+   <td><a href="editProduct.php?shrtID='.$row["shrtID"].'">Edit</a></td>
+  </tr>
   
-			  
-										  ';
-										 }
-										}
-}else
+  ';
+ }
+}elseif($search==3){
+ foreach($result as $row)
+ {
+  $output .= '
+  <tr>
+   <td>'.$row["shName"].'</td>
+   <td>'.$row["shDesc"].'</td>
+   <td>'.$row["shPrice"].'</td>
+   <td><img style="width:350px" src="http://'.$row["shImg"].'"></td>
+    <td><a href="editProduct.php?shID='.$row["shID"].'">Edit</a></td>
+  </tr>
+  
+  ';
+}
+}elseif($search==4){
+ foreach($result as $row)
+ {
+  $output .= '
+  <tr>
+   <td>'.$row["paName"].'</td>
+   <td>'.$row["paDesc"].'</td>
+   <td>'.$row["paPrice"].'</td>
+   <td><img style="width:350px "src="http://'.$row["paImg"].'"></td>
+    <td><a href="editProduct.php?paID='.$row["paID"].'">Edit</a></td>
+  </tr>
+  
+  ';
+ }
+}elseif($search==5){
+ foreach($result as $row)
+ {
+  $output .= '
+  <tr>
+   <td>'.$row["asName"].'</td>
+   <td>'.$row["asDesc"].'</td>
+   <td>'.$row["asPrice"].'</td>
+   <td><img src="http://'.$row["asImg"].'"></td>
+   <td><a href="editProduct.php?asID='.$row["asID"].'">Edit</a></td>
+  </tr>
+  
+  ';
+ }
+}
+else
 {
  $output .= '
  <tr>
@@ -137,7 +134,10 @@ if($total_row > 0)
  </tr>
  ';
 }
-
+}
 
 echo $output;
+
+
+
 ?>
