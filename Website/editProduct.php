@@ -52,9 +52,9 @@
 	$stmt1 = $conn->prepare("Select genID,gender from gender");
 	$stmt1->execute();
 	
-	$stmt2 = $conn->prepare("Select * from cat");
+	$stmt2 = $conn->prepare("Select catID,catName from cat");
 	$stmt2->execute();
-	$result2 = $stmt2->fetchAll();
+	
 	
 	
 	if($jaID!=null){
@@ -65,9 +65,9 @@
 	
 	
 	
-	$stmt6 = $conn->prepare("Select * from cat where catID = 1");
+	$stmt6 = $conn->prepare("Select catID,catName from cat where catID = 1");
 	$stmt6->execute();
-	
+	$result4 = $stmt6->fetchObject();
 	
 	
 	}elseif($shrtID!=null){
@@ -80,7 +80,7 @@
 	
 	$stmt6 = $conn->prepare("Select * from cat where catID = 2");
 	$stmt6->execute();
-		
+	$result4 = $stmt6->fetchObject();	
 		
 		
 		
@@ -92,6 +92,7 @@
 	
 	$stmt6 = $conn->prepare("Select * from cat where catID = 3");
 	$stmt6->execute();
+	$result4 = $stmt6->fetchObject();
 	
 	}elseif($paID!=null){
 	
@@ -102,6 +103,7 @@
 	
 	$stmt6 = $conn->prepare("Select * from cat where catID = 4");
 	$stmt6->execute();
+	$result4 = $stmt6->fetchObject();
 	
 	}elseif($asID!=null){
 		
@@ -112,6 +114,7 @@
 	
 	$stmt6 = $conn->prepare("Select * from cat where catID = 5");
 	$stmt6->execute();
+	$result4 = $stmt6->fetchObject();
 	}
 	
 	
@@ -120,8 +123,8 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"><a class="nav-link active" href="productForm.php">Add product</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Edit product</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Source files</a></li>
+                    <li class="nav-item"><a class="nav-link" href="searchProduct.php">Search product</a></li>
+                    
                 </ul><span class="navbar-text actions"> <a class="btn btn-light action-button" role="button" href="#">Log out</a></span>
             </div>
         </div>
@@ -129,6 +132,7 @@
     
 	echo '<section class="contact-clean">';
 	echo "<form class='bootstrap-form-with-validation' action='updateProduct.php' method='post' enctype='multipart/form-data'>";
+	
 	if($jaID!=null){
 	echo '<h2 class="text-center">Edit Product</h2>';
 	echo "<p hidden>Product ID:<input type='text' id='IDname' name='IDname' value='{$result3->jaID}' hidden></p>";
@@ -156,9 +160,14 @@
 	echo "<div class='form-group'><label for='email-input'>Category:</label>
 		<select name='cat'>";
 	
-		while ($result6 = $stmt6->fetch()) {
-	echo "<option value=$result6[catID]>$result6[catName]</option>";
+		while ($record2 = $stmt2->fetchObject()) {
+			if ($result4->catID == $record2->catID) {
+	echo "<option value='{$record2->catID}'selected>{$record2->catName}</option>";
 	}
+	else {
+		echo "<option value='{$record2->catID}'>{$record2->catName}</option>";
+	}
+		}
 	echo "</select></div>";
 	
 	
@@ -168,12 +177,12 @@
                     <div class="input-group-prepend"></div>
                 </div>
             </div>';
-	echo "<div class='form-group'><label>Information of product</label><textarea class='form-control' name='info'>{$result3->jaDesc}</textarea></div>";
+	echo "<div class='form-group'><label>Information of product</label><textarea class='form-control' name='desc'>{$result3->jaDesc}</textarea></div>";
 	
 	}
 	elseif($shrtID!=null){
 		echo '<h2 class="text-center">Edit Product</h2>';
-	echo "<div class='form-group' hidden>Product ID:<input type='text' id='IDname' name='IDname' value='{$result5->shrtID}' hidden></p>";
+	echo "<p hidden>Product ID:<input type='text' id='IDname' name='IDname' value='{$result5->shrtID}' hidden></p>";
 	echo "<div class='form-group'><label for='text-input'>Product name:</label>
 	<input class='form-control' type='text' id='fname' name='fname' value='{$result5->shrtName}'></div>";
 	echo "<div class='form-group'><label for='file-input'>Image:</label>";
@@ -198,9 +207,14 @@
 	echo "<div class='form-group'><label for='email-input'>Category:</label>
 		<select name='cat'>";
 	
-		while ($result6 = $stmt6->fetch()) {
-	echo "<option value=$result6[catID]>$result6[catName]</option>";
+		while ($record2 = $stmt2->fetchObject()) {
+			if ($result4->catID == $record2->catID) {
+	echo "<option value='{$record2->catID}'selected>{$record2->catName}</option>";
 	}
+	else {
+		echo "<option value='{$record2->catID}'>{$record2->catName}</option>";
+	}
+		}
 	echo "</select></div>";
 	
 	
@@ -210,7 +224,7 @@
                     <div class="input-group-prepend"></div>
                 </div>
             </div>';
-	echo "<div class='form-group'><label>Information of product</label><textarea class='form-control' name='info'>{$result5->shrtDesc}</textarea></div>";
+	echo "<div class='form-group'><label>Information of product</label><textarea class='form-control' name='desc'>{$result5->shrtDesc}</textarea></div>";
 	
 	}
 	elseif($shID!=null){
@@ -239,10 +253,15 @@
 	
 	echo "<div class='form-group'><label for='email-input'>Category:</label>
 		<select name='cat'>";
-	
-		while ($result6 = $stmt6->fetch()) {
-	echo "<option value=$result6[catID]>$result6[catName]</option>";
+	while ($record2 = $stmt2->fetchObject()) {
+			if ($result4->catID == $record2->catID) {
+		echo "<option value='{$record2->catID}'selected>{$record2->catName}</option>";
+		}
+			else {
+			echo "<option value='{$record2->catID}'>{$record2->catName}</option>";
+			}
 	}
+	
 	echo "</select></div>";
 	
 	
@@ -252,7 +271,7 @@
                     <div class="input-group-prepend"></div>
                 </div>
             </div>';
-	echo "<div class='form-group'><label>Information of product</label><textarea class='form-control' name='info'>{$result7->shDesc}</textarea></div>";
+	echo "<div class='form-group'><label>Information of product</label><textarea class='form-control' name='desc'>{$result7->shDesc}</textarea></div>";
 	
 	}
 	elseif($paID!=null){
@@ -282,9 +301,14 @@
 	echo "<div class='form-group'><label for='email-input'>Category:</label>
 		<select name='cat'>";
 	
-		while ($result6 = $stmt6->fetch()) {
-	echo "<option value=$result6[catID]>$result6[catName]</option>";
+		while ($record2 = $stmt2->fetchObject()) {
+			if ($result4->catID == $record2->catID) {
+	echo "<option value='{$record2->catID}'selected>{$record2->catName}</option>";
 	}
+	else {
+		echo "<option value='{$record2->catID}'>{$record2->catName}</option>";
+	}
+		}
 	echo "</select></div>";
 	
 	
@@ -294,7 +318,7 @@
                     <div class="input-group-prepend"></div>
                 </div>
             </div>';
-	echo "<div class='form-group'><label>Information of product</label><textarea class='form-control' name='info'>{$result8->paDesc}</textarea></div>";
+	echo "<div class='form-group'><label>Information of product</label><textarea class='form-control' name='desc'>{$result8->paDesc}</textarea></div>";
 	
 	}elseif($asID!=null){
 		echo '<h2 class="text-center">Edit Product</h2>';
@@ -323,9 +347,14 @@
 	echo "<div class='form-group'><label for='email-input'>Category:</label>
 		<select name='cat'>";
 	
-		while ($result6 = $stmt6->fetch()) {
-	echo "<option value=$result6[catID]>$result6[catName]</option>";
+		while ($record2 = $stmt2->fetchObject()) {
+			if ($result4->catID == $record2->catID) {
+	echo "<option value='{$record2->catID}'selected>{$record2->catName}</option>";
 	}
+	else {
+		echo "<option value='{$record2->catID}'>{$record2->catName}</option>";
+	}
+		}
 	echo "</select></div>";
 	
 	
@@ -335,7 +364,7 @@
                     <div class="input-group-prepend"></div>
                 </div>
             </div>';
-	echo "<div class='form-group'><label>Information of product</label><textarea class='form-control' name='info'>{$result9->asDesc}</textarea></div>";
+	echo "<div class='form-group'><label>Information of product</label><textarea class='form-control' name='desc'>{$result9->asDesc}</textarea></div>";
 	}
 		
 		
