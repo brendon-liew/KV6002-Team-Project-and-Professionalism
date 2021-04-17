@@ -29,7 +29,7 @@ window.location.href='login.php';
 </script>";
 
     } else {
-        $sql = "SELECT * FROM `user` WHERE userName='$email' AND '$password'";
+        $sql = "SELECT * FROM `user` WHERE userName='$email' AND userPassword='$password' ";
         $query = mysqli_query($con, $sql);
         $res = mysqli_num_rows($query);
 
@@ -42,7 +42,10 @@ window.location.href='login.php';
             $_SESSION['logged-in'] = true;
             $_SESSION['email'] = $email;
         } else {
-            echo "Invalid Username or Password";
+            echo "<script>
+         alert('the username or password is incorrect');
+         window.location.href='login.php';
+</script>";
         }
     }
 }
