@@ -53,15 +53,24 @@ if(isset($_POST['submit'])){
 	
 	
 	
-	//Check see whether this directory exist current folder 
-	if(!is_dir($folder)){
-		mkdir($folder,0755);
-	}
+	/Check see whether this directory exist current folder 
+	//if(!is_dir($folder)){
+	//	mkdir($folder,0755);
+	//}
 	//Save image to the folder
-	  $folder1 = getcwd()."/Img/".$filename; 
-	  
+	 if($cate==1){
+	  $folder1 = getcwd()."/images/jacket/".$filename; 
+	 }elseif($cate==2){
+		$folder1 = getcwd()."/images/shirt/".$filename;  
+	 }elseif($cate==3){
+		 $folder1 = getcwd()."/images/shoes/".$filename; 
+		 }elseif($cate==4){
+		 $folder1 = getcwd()."/images/pants/".$filename; 
+		 }elseif($cate==5){
+			 $folder1 = getcwd()."/images/Accessories/".$filename; 
+		 }
 	 if(move_uploaded_file($tempname, $folder1)){
-		echo "Image uploaded successfully"; 
+		echo "<script>alert('Update successfully');</script>";
 	 }else{
 		 echo "Fail to upload";
 	 }
