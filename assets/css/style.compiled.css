@@ -1,0 +1,84 @@
+body {
+  padding: 1em;
+}
+
+h4 {
+  padding: 60px;
+  text-align: center;
+  background: #e5c6db;
+  color: white;
+  font-size: 30px;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+#accordion h3 {
+  margin-top: 12px;
+}
+#accordion .tab-content {
+  margin-top: 12px;
+}
+#accordion .nav-tabs a {
+  font-size: 12px;
+  padding: 9px !important;
+}
+
+#accordion .panel-heading {
+  padding: 0;
+}
+#accordion .panel-heading a {
+  background-color: #434a52;
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#accordion .panel-heading a:hover {
+  background-color: #e87fc9;
+}
+#accordion .panel-heading a:active {
+  background-color: black;
+}
+#accordion .panel-heading a:visited {
+  background-color: #434a52;
+}
+#accordion .panel-heading .nav > li > a {
+  padding: 10px 7px;
+}
+
+td {
+  padding: 0.8em;
+}
+
+table tr:first-child td {
+  background: #333;
+  color: white;
+}
+
+caption {
+  color: white;
+  background: #5c5c5c;
+  padding: 6px 12px;
+  border-top: none;
+}
+
+ul {
+  top: 2.75em;
+  left: 0;
+  background: #fff;
+  color: #2c3e50;
+  border-bottom: 0.25rem solid #bdc3c7;
+  opacity: 0;
+  transition: all 0.35s;
+}
+
+/* Fix chopped in half elements caused by -webkit-overflow-scrolling-touch bug */
+td {
+  -webkit-transform: translate3d(0, 0, 0);
+  background: white;
+  border: 1px solid #ddd;
+}
+
+/* BOOTSRAP */
