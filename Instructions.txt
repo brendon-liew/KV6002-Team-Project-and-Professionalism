@@ -1,0 +1,5 @@
+In order to install this this site:
+1) Install XAMPP, its hosted locally.
+2) Install git.
+3) Open Git Bash.
+4) Type " git clone https://github.com/Verxious/Fashion " (WITHOUT THE "" !!)`
